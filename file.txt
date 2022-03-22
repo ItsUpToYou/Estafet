@@ -1,7 +1,0 @@
-hello world
-<<<<<<< HEAD
-
-Hehe
-=======
-hello change
->>>>>>> 971be3577fd8ce55bbe86ade8369e5778591e50f
