@@ -13,4 +13,18 @@ Follow below commands for Oracale installation:
 
 Once the above command executes it will connect you to the SQL Plus terminal. Execute following commands to create the user to work on  
     connect sys as sysdba;
-Above command will prompt you to enter the password. Enter Oradoc_db1 as default password
+Above command will prompt you to enter the password: Oradoc_db1
+
+Container Database (CDB)
+Username: SYS
+Role: SYSDBA
+Password: Oradoc_db1
+Host: localhost
+SID: ORCLCDB
+
+Pluggable Database (PDB)
+Username: SYS
+Role: SYSDBA
+Password: Oradoc_db1
+Host: localhost
+Service Name: ORCLPDB1.localdomain
