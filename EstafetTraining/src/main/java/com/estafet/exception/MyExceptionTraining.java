@@ -1,65 +1,30 @@
 package com.estafet.exception;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.err;
 
-public class Order {
-    int orderNumber = 10;
-    String clientDetails;
-    List<String> articles = new ArrayList<>();
-    double totalAmount;
+public class MyExceptionTraining {
 
-    public static void accessResource() {
-        throw new RuntimeException("Is not accessable that resource !!!");
-    }
-
-    public static void close() throws Exception {
-        throw new NullPointerException("Suppressed  Null pointer exception for clear resources. !!");
-    }
-
-    public static void throwableMethod() throws Exception {
-        Throwable th = null;
-        try {
-            accessResource();
-        } catch (Exception e) {
-            th = e;
-        } finally {
-            try {
-                close();
-            } catch (Exception e) {
-                if (th != null) {
-                    e.addSuppressed(th); //Add to primary exception
-                    throw e;
-                }
-            }
-        }
-    }
 
     //- On some of the methods in class Order (method X) mark that they will throw that custom exception (in the method signature)
-    public void methodSignitureException(int num) throws CustomException {
-        if (num < orderNumber) {
-            throw new CustomException("The number must be bigger than the Order number 10");
-        }
+    public void methodSignitureException() throws CustomException {
+            throw new CustomException("Custom exception in thrown");
     }
 
     // From another method, call X and handle the exception
-    public void methodHandleException(int num) {
+    public void methodHandleException() {
         try {
-            methodSignitureException(num);
+            methodSignitureException();
         } catch (CustomException e) {
             System.out.println(e.getMessage());
         }
     }
 
     //From another method call X and re-throw the exception
-    public void methodReThrowException(int num) throws CustomException {
-
-        methodSignitureException(num);
-
+    public void methodReThrowException() throws CustomException {
+        methodSignitureException();
     }
 
     //- Clear resources in the finally block
@@ -95,6 +60,8 @@ public class Order {
         }
     }
 
+
+
     //Catch the top level exception (Throwable)
     public void catchThrowableException() {
         try {
@@ -106,6 +73,32 @@ public class Order {
 
     }
 
+
+    public static void accessResource() {
+        throw new RuntimeException("Is not accessable that resource !!!");
+    }
+
+    public static void close() throws Exception {
+        throw new NullPointerException("Suppressed  Null pointer exception for clear resources. !!");
+    }
+
+    public static void throwableMethod() throws Exception {
+        Throwable th = null;
+        try {
+            accessResource();
+        } catch (Exception e) {
+            th = e;
+        } finally {
+            try {
+                close();
+            } catch (Exception e) {
+                if (th != null) {
+                    e.addSuppressed(th); //Add to primary exception
+                    throw e;
+                }
+            }
+        }
+    }
     //- Use try with resources on some of the methods of the Order class
     public void tryWithResources() {
         String line;
@@ -117,4 +110,6 @@ public class Order {
             System.out.println("IOException in try block =>" + e.getMessage());
         }
     }
+
+
 }

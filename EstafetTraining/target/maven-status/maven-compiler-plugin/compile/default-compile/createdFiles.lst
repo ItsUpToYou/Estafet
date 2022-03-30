@@ -1,3 +1,5 @@
 com\estafet\exception\CustomException.class
-com\estafet\exception\TestExceptions.class
-com\estafet\exception\Order.class
+com\estafet\exception\MyExceptionTraining.class
+com\estafet\exception\Orders.class
+com\estafet\exception\TrainingTests.class
+com\estafet\exception\DataStructures.class
