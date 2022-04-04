@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="3cb52c56-e04a-4015-9abd-27f8690135d7" name="orclcdb" url="jdbc:oracle:thin:@localhost:1521:orclcdb" driverClass="oracle.jdbc.OracleDriver" />
+    </data-sources>
+  </component>
+</project>
