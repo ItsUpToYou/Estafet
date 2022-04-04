@@ -1,9 +1,15 @@
 package com.estafet.exception;
 
-import java.io.Serializable;
-import java.util.Date;
 
-public class Orders implements Serializable {
+import org.hibernate.criterion.Order;
+
+import java.sql.*;
+import java.util.Date;
+import java.util.List;
+
+
+public class Orders {
+
     private int orders_id;
     private String firstName;
     private String lastName;
@@ -13,6 +19,27 @@ public class Orders implements Serializable {
     private int itemQuantity;
     private int totalPrice;
     private Date dateTime;
+
+    public Orders() throws SQLException {
+    }
+
+    public Orders(String firstName, String lastName, String city, String address, String email, int itemQuantity, int totalPrice) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.address = address;
+        this.email = email;
+        this.itemQuantity = itemQuantity;
+        this.totalPrice = totalPrice;
+    }
+
+    public int getOrders_id() {
+        return orders_id;
+    }
+
+    public void setOrders_id(int orders_id) {
+        this.orders_id = orders_id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -78,11 +105,4 @@ public class Orders implements Serializable {
         this.dateTime = dateTime;
     }
 
-    public int getOrders_id() {
-        return orders_id;
-    }
-
-    public void setOrders_id(int orders_id) {
-        this.orders_id = orders_id;
-    }
 }

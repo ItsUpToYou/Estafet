@@ -42,11 +42,17 @@
             <artifactId>commons-dbutils</artifactId>
             <version>1.7</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
+
     </dependencies>
 
 
     <build>
-
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
